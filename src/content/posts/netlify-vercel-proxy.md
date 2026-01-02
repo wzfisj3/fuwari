@@ -1,20 +1,19 @@
 ---
-
 category: 随笔
 description: 会用Netlify，家宽建站不是梦！
 draft: false
-image: https://eo-r2.2x.nz/myblog/img/image.png
-lang: ''
+image: ../assets/images/easy-cover%20(2).png
+lang: ""
 published: 2025-04-04
-tags: [Netlify, Vercel]
+tags:
+  - Netlify
+  - Vercel
 title: Netlify、Vercel反代网站
-
 ---
 
 # 原理思路
 
 现阶段大部分家宽拿不到公网IPv4，但是可以拿到公网IPv6，借助Netlify做一个v6 -> v4的回源就可以让所有人都访问到你的站点了。同时这也是一个Netlify的通用反代教程。本文还教了Vercel的通用反代教程，不过这玩意在2025年仍然不支持IPv6，只能拿来反代小黄站了ToT
-
 # 正式开始
 
 ## Netlify篇
