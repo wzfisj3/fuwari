@@ -1,0 +1,21 @@
+name: Check Links
+
+on:
+  schedule:
+    - cron: '0 0 */30 * *' # Run every 30 days
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Link Checker
+        run: node scripts/check-links.js
