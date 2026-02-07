@@ -165,12 +165,24 @@ async function processFile(filePath, type) {
         }
 
         // If URL check failed (and not just N/A), skip avatar check and return early
-        // BUT wait, requirements say "if url failed, directly exit". Assuming this means exit checking THIS item.
+        // Also delete the file if URL check failed
         if (data.url && !urlResult.ok && urlResult.status !== 'N/A') {
              // Print output for failed URL
              let output = `${colors.cyan}${name}${colors.reset}：`;
              output += `url：${colors.red}${urlResult.status}${colors.reset}`;
              console.log(output);
+
+             // DELETE THE FILE
+             try {
+                 fs.unlinkSync(filePath);
+                 console.log(`${colors.red}DELETED file: ${filePath}${colors.reset}`);
+                 // Add to stats for report
+                 if (!stats.deleted) stats.deleted = [];
+                 stats.deleted.push({ type, name, file: path.basename(filePath), reason: `URL failed: ${urlResult.status}` });
+             } catch (delErr) {
+                 console.error(`${colors.red}Failed to delete file: ${delErr.message}${colors.reset}`);
+             }
+
              return;
         }
 
@@ -263,6 +275,19 @@ async function main() {
         if (process.env.GITHUB_STEP_SUMMARY) {
             const summaryPath = process.env.GITHUB_STEP_SUMMARY;
             let summary = '## ❌ Link Check Failures\n\n';
+            
+            if (stats.deleted && stats.deleted.length > 0) {
+                summary += '### 🗑️ Deleted Files\n';
+                summary += 'The following files were automatically deleted because their main URL was inaccessible:\n\n';
+                summary += '| Type | Name | File | Reason |\n';
+                summary += '|------|------|------|--------|\n';
+                stats.deleted.forEach(del => {
+                    summary += `| ${del.type} | ${del.name} | ${del.file} | ${del.reason} |\n`;
+                });
+                summary += '\n';
+            }
+
+            summary += '### ⚠️ Other Errors\n';
             summary += '| Type | Name | Field | Error | URL |\n';
             summary += '|------|------|-------|-------|-----|\n';
             stats.errors.forEach(err => {
@@ -271,7 +296,11 @@ async function main() {
             fs.appendFileSync(summaryPath, summary);
         }
         
-        process.exit(1); // Exit with error code to notify GitHub Actions
+        // We still exit with 1 to mark the job as failed (or maybe success since we handled it by deleting?)
+        // User said "automatically delete", usually implies the workflow should commit changes.
+        // So we should probably exit 0 if we only deleted files, but if there are other errors (like avatar failed but not deleted) we might want to warn.
+        // But for now let's exit 1 so the user gets notified that cleanup happened.
+        process.exit(1); 
     } else {
         if (process.env.GITHUB_STEP_SUMMARY) {
             const summaryPath = process.env.GITHUB_STEP_SUMMARY;
