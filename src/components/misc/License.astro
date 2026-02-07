@@ -27,17 +27,22 @@ const postUrl = decodeURIComponent(Astro.url.toString());
     <script>
     const currentLink = document.getElementById('current-link');
 
-    if (currentLink) {
-        console.log(`[license] old url: ${window.location.href}`);
-        const url = new URL(window.location.href);
-        url.search = '';
-        const address = url.toString();
-        console.log(`[license] new url: ${address}`);
-    
-        currentLink.textContent = address;  // 显示文本 = 当前 URL
-        currentLink.href = address;         // 点击跳转 = 当前 URL
-        currentLink.style.display = 'inline'; // 显示出来
-    }
+	if (currentLink) {
+	    const oldUrl = window.location.href;
+	    const url = new URL(oldUrl);
+	    url.search = ''; // 移除查询字符串
+	    if (url.hash.includes('giscus-')) {
+	        url.hash = ''; // 移除 #giscus-xxx 的 hash
+	    }
+	    const newUrl = url.toString();
+	    if (oldUrl !== newUrl) {
+	        console.log(`[license] replaced url: ${oldUrl} -> ${newUrl}`);
+	    }
+	
+	    currentLink.textContent = newUrl;  // 显示文本 = 当前 URL
+	    currentLink.href = newUrl;         // 点击跳转 = 当前 URL
+	    currentLink.style.display = 'inline'; // 显示出来
+	}
     </script>
 
     <div class="flex gap-6 mt-2">
