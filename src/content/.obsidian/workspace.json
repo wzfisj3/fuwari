@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "spec/announcement.md",
+                "file": "posts/review-ddos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "announcement"
+              "title": "review-ddos"
             }
           },
           {
@@ -185,18 +185,20 @@
   },
   "active": "f6b5e7abc96521b9",
   "lastOpenFiles": [
-    "assets/images/afc68c43e47a573dfa29ced41b56e3ce.webp",
-    "posts/watermark.md",
+    "assets/images/review-ddos-12.png",
+    "assets/images/review-ddos-11.png",
+    "assets/images/review-ddos-10.png",
+    "assets/images/review-ddos-9.png",
+    "assets/images/review-ddos-8.png",
+    "assets/images/review-ddos-7.png",
+    "assets/images/review-ddos-6.png",
+    "assets/images/review-ddos-5.png",
+    "assets/images/review-ddos-4.png",
+    "assets/images/review-ddos-3.png",
+    "assets/images/review-ddos-2.png",
     "spec/announcement.md",
-    "assets/images/watermark.webp",
-    "assets/images/watermark-6.webp",
-    "assets/images/watermark-5.webp",
-    "assets/images/watermark-4.webp",
-    "assets/images/watermark-3.webp",
-    "assets/images/watermark-1.webp",
-    "assets/images/improve-seo-1.webp",
-    "assets/images/屏幕截图2025-08-09213908.webp",
-    "assets/images/zte-f450-bridge.webp",
+    "posts/review-ddos.md",
+    "posts/watermark.md",
     "assets/images",
     "assets/images/_slug_.CWICv0vP.css",
     "assets/images/_page_.DhhhZL1-.css",
@@ -228,7 +230,6 @@
     "posts/ghedu-free-tech.md",
     "posts/ghedu-free-name.md",
     "posts/ghedu-free-me.md",
-    "posts/eopf-github-proxy.md",
-    "posts/mac-gal.md"
+    "posts/eopf-github-proxy.md"
   ]
 }
