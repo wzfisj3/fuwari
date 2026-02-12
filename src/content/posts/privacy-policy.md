@@ -10,9 +10,9 @@ lang: ""
 # All Cookies
 
 ### Strictly necessary cookies（必要的cookies）
-
-- [Umami](https://umami.acofork.com)：收集站点的基本访问情况，并对外显示浏览量，由本站直接提供
-- [Giscus](https://giscus.app)：提供评论功能，由 Github 提供
+- [Cloudflare Analytics](https://www.cloudflare.com/analytics/)：收集站点的基本访问情况
+- [Umami](https://umami.acofork.com)：收集站点的基本访问情况，并对外显示浏览量
+- [Giscus](https://giscus.app)：提供评论功能
 
 ### Functionality cookies（功能性cookies）
 - 无
