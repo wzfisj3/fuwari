@@ -96,7 +96,7 @@ export default defineConfig({
 	image: {
 		service: passthroughImageService(),
 	},
-	site: "https://2x.nz",
+	site: "https://blog.wzfisj.qzz.io",
 	base: "/",
 	trailingSlash: "always",
 	output: "static",
