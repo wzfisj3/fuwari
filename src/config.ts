@@ -11,12 +11,12 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "《二叉树树》官方网站",
+	title: "《wzf》官方网站",
 	subtitle: "AcoFork",
 	description:
-		"《二叉树树》是一个专注于IT/互联网技术分享与实践的个人技术博客，在这里你可以找到众多前沿技术的分享与实践经验。",
+		"《wzf》是一个专注于IT/互联网技术分享与实践的个人技术博客，在这里你可以找到众多前沿技术的分享与实践经验。",
 
-	keywords: ["二叉树树","二叉树树官网","树","二叉树","二叉","博客","AcoFork Blog","AcoFork","Blog","acofork blog","acofork","blog"],
+	keywords: ["wzf","wzf官网","树","二叉树","二叉","博客","AcoFork Blog","AcoFork","Blog","acofork blog","acofork","blog"],
 	lang: "zh_CN", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
 		hue: 361, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
@@ -117,12 +117,12 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "Bilibli",
 			icon: "bilibili", // Local icon
-			url: "https://space.bilibili.com/325903362",
+			url: "https://space.bilibili.com/1390147996?spm_id_from=333.1007.0.0",
 		},
 		{
 			name: "GitHub",
 			icon: "github", // Local icon
-			url: "https://github.com/afoim",
+			url: "https://github.com/wzfisj",
 		},
 		{
 			name: "Folo",
