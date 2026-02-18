@@ -58,11 +58,11 @@ export const siteConfig: SiteConfig = {
 	],
 	officialSites: [
 		{ url: "https://acofork.com", alias: "CN" },
-		{ url: "https://2x.nz", alias: "Global" },
+		{ url: "https://blog.wzfisj.qzz.io", alias: "Global" },
 	],
 	server: [
 		{ url: "", text: "Blog" },
-		{ url: "https://u.2x.nz", text: "Umami" },
+		{ url: "https://u.blog.wzfisj.qzz.io", text: "Umami" },
 		{ url: "https://p.2x.nz", text: "RandomPic" },
 	],
 };
@@ -101,7 +101,7 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=0", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "二叉树树",
+	name: "wzf",
 	bio: "Protect What You Love.",
 	links: [
 		{
