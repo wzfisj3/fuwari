@@ -103,7 +103,7 @@ export default defineConfig({
 	redirects: {
 		"/privacy-policy": {
 			status: 302,
-			destination: "https://2x.nz/posts/privacy-policy/",
+			destination: "https://blog.wzfisj.qzz.io/posts/privacy-policy/",
 		},
 		"/long": {
 			status: 302,
@@ -119,7 +119,7 @@ export default defineConfig({
 		},
   "/t": {
 			status: 302,
-			destination: "https://i.2x.nz",
+			destination: "https://blog.wzfisj.qzz.io",
 		},
 		"/ak": {
 			status: 302,
@@ -167,7 +167,7 @@ export default defineConfig({
 		},
 		"/s": {
 			status: 302,
-			destination: "https://2x.nz/_url",
+			destination: "https://blog.wzfisj.qzz.io",
 		},
 		"/plan": {
 			status: 302,
